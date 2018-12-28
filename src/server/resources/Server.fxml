@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox fx:controller="server.Main" alignment="CENTER" prefHeight="400.0" prefWidth="640.0"
+      xmlns="http://javafx.com/javafx/10.0.1"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <!--<MenuItem onAction="#handleQuit" text="Quit" />-->
+                    </items>
+                </Menu>
+                <Menu text="Help">
+                    <items>
+                        <MenuItem text="About BlackJackFX"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane VBox.vgrow="ALWAYS">
+            <children>
+                <VBox prefHeight="371.0" prefWidth="640.0">
+                    <children>
+                        <HBox fx:id="controlBar" alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="640.0">
+                            <children>
+                                <Label text="Server Logs">
+                                    <HBox.margin>
+                                        <Insets left="20.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                                <Label layoutX="30.0" layoutY="20.0" text="IP">
+                                    <HBox.margin>
+                                        <Insets right="20.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="portTA" promptText="Blank for Auto IP">
+                                    <HBox.margin>
+                                        <Insets right="20.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                                <Button mnemonicParsing="false" onAction="#stopServer" text="Stop">
+                                    <HBox.margin>
+                                        <Insets right="20.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#startServer" text="Start">
+                                    <HBox.margin>
+                                        <Insets right="20.0"/>
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+
+                        <!--<Accordion fx:id="accordionRoot" prefHeight="225.0" prefWidth="640.0"/>-->
+                        <fx:include source="ServerLog.fxml"></fx:include>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
